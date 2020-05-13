@@ -30,7 +30,7 @@ export class ControlBox extends React.Component {
 		this.hoverfx = -1
 		this.hoveroverfx = -1
 		let ctrltransform = x => {
-			return (<li> {x.map(y => (<span onMouseEnter = {this.handlehover()} onMouseLeave = {this.handlehoverover()} style = {{"background-color":y[1]}}>{y[0]}</span>))}</li>)
+			return (<li className="controlli"> {x.map(y => (<span onMouseEnter = {this.handlehover()} onMouseLeave = {this.handlehoverover()} style = {{"background-color":y[1]}}>{y[0]}</span>))}</li>)
 		}
 		
 		let switcherCtrl = {
@@ -43,7 +43,10 @@ export class ControlBox extends React.Component {
 		}
 	
 		return (
-			<FullText text = {this.props.text} transform = {ctrltransform} highlight = {this.props.highlight} switcher = {switcherCtrl} className={this.props.className}/>
+			<div className="controlbox">
+				<h3>Generic Profile Summary, Associate Professor (Research and Teaching)</h3>
+				<FullText text = {this.props.text} transform = {ctrltransform} highlight = {this.props.highlight} switcher = {switcherCtrl} className={this.props.className+"inside"}/>
+			</div>
 		)
 	}
 }

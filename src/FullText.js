@@ -1,6 +1,8 @@
 import React from 'react'
 import './App.css'
 
+const COLORS = ["saddlebrown", "green", "blue", "indianred", "mediumseagreen","rebeccapurple"]
+
 export class FullText extends React.Component {
 	constructor(props) {
 		super(props)
@@ -13,7 +15,7 @@ export class FullText extends React.Component {
 		let i,j
 		for (i = 0; i < this.props.highlight.length; i++) {
 			if (this.props.highlight[i]) {
-				this.props.switcher[i].forEach(x => highlighting[x] = "blue")
+				this.props.switcher[i].forEach(x => highlighting[x] = COLORS[i])
 			}
 		}
 		let k = 0

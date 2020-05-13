@@ -41,12 +41,12 @@
 	display: grid;
 	grid-template-columns: repeat(2,1fr);
 	padding: 2%;
-	font-size: 18px;
+	font-size: 14px;
 }
 
 
 .left {
-	border-color: yellow;
+	border-color: white;
 	border-width: 2px;
 	padding: 2%;
 	display: grid;
@@ -55,21 +55,29 @@
 
 .right {
 	border-style: solid;
-	border-color: pink;
+	border-color: white;
 	border-width: 2px;
 	padding: 2%;  
 }
 
 .evidence {
 	border-style: solid;
-	border-color: blue;
+	border-color: white;
 	border-width: 2px;
 	padding: 1em;
 }
 
 .controlbox {
 	border-style: solid;
-	border-color: green;
+	border-color: white;
 	border-width: 2px;
 	padding: 1em;
+}
+
+.controlli {
+	padding: 0.5em 0px;
+}
+
+h3 {
+	text-align: center;
 }

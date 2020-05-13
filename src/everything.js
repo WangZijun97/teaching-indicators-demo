@@ -56,7 +56,7 @@ export class Everything extends React.Component {
 				"Her pedagogical approach is to create a safe yet challenging learning environment to build trust and engage students, and one key aspect of this is through candid storytelling that connects with their identities while exposing them to other points of view."
 			],
 			[
-				"Dr Nguyen takes feedback from students very seriously. For example, she discovered that many students found it difficult to understand the key concept of Entfremdung, which was apparent from multiple assessments that demonstrated misconceptions and received low grades. ",
+				(<span>Dr Nguyen takes feedback from students very seriously. For example, she discovered that many students found it difficult to understand the key concept of <i>Entfremdung</i>, which was apparent from multiple assessments that demonstrated misconceptions and received low grades. </span>),
 				"She inquired into the reasons for this difficulty and took steps to change her approach to teaching. This investigation resulted in positive comments from students in but improved student understanding, as evident from her systematic analysis of assignments in subsequent years based on quality criteria. She based this analysis on recent scholarship that demonstrates the importance of universal design for learning as a framework for inclusivity. ",
 				"Dr Nguyen's impact as an educator goes beyond classroom teaching. She regularly presents her approach to teaching in departmental seminars and has conducted a number of Graduate Professionalisation workshops for tutors in her department. As undergraduate coordinator for Theatre Studies, she leads curriculum planning and is regularly asked to review curriculum at other universities. "
 			]
@@ -94,28 +94,29 @@ export class Everything extends React.Component {
 		
 		let controlboxtext = [
 			[
-				"A committed teacher with deep knowledge of the subject taught, individual students and how they learn, and what needs to be done to support their learning (CK)."
+				(<span>A committed teacher with deep knowledge of the subject taught, individual students and how they learn, and what needs to be done to support their learning <b>(K: knowledge base).</b></span>)
 			],
 			[
-				"Demonstrates positive impact on students' education, attained through high levels of achievement in both the process (LF) ",
-				"and the design of teaching important content that provides students with a strong knowledge base (ED)."
+				(<span>Demonstrates positive impact on students' education, attained through high levels of achievement in both the <b>process (LF: learning facilitation) </b></span>),
+				(<span> and the <b>design</b> of teaching important content that provides students with a strong knowledge base <b>(ED: educational design).</b></span>)
 			],
 			[
-				"Engages in sustained reflection (RP) ",
-				"that is underpinned by scholarly engagement with relevant research-informed work in order to improve their teaching and their students' learning (SP)."
+				(<span>Engages in sustained <b>reflection (RP: reflective practice)</b> </span>),
+				(<span>that is underpinned by <b>scholarly engagement</b> with relevant research-informed work in order to improve their teaching and their students' learning <b>(SP: scholarly practice).</b></span>)
 			],
 			[
-				"Can provide significant evidence of the influence of their teaching - contributions through the process and design of teaching and curriculum, as well as through reflection and scholarly engagement shared with colleagues in the department and faculty (EL)."
+				(<span>Can provide significant evidence of the <b>influence of their teaching</b> - contributions through the process and design of teaching and curriculum, as well as through reflection and scholarly engagement shared with colleagues in the department and faculty <b>(EL: educational leadership).</b></span>)
 			]
 		]
 		
 		return (
 			<div className="everything">
 				<div className="left">
-				<ControlBox text = {controlboxtext} highlight = {this.state.highlight} handlehover = {this.handlecbhover} handlehoverover = {this.handlecbhoverover} className="controlbox"/>
-				<FullText text = {evd} transform = {evdtransform} highlight = {this.state.highlight} switcher = {switcherEvd} className="evidence"/>
+					<ControlBox text = {controlboxtext} highlight = {this.state.highlight} handlehover = {this.handlecbhover} handlehoverover = {this.handlecbhoverover} className="controlbox"/>
+					<FullText text = {evd} transform = {evdtransform} highlight = {this.state.highlight} switcher = {switcherEvd} className="evidence"/>
 				</div>
 				<div className="right">
+					<h3>Specific Profile, Associate Professor (RT Appointment)</h3>
 					<FullText text = {pro} transform = {protransform} highlight = {this.state.highlight} switcher = {switcherPro} className="profile"/>
 				</div>
 			</div>
