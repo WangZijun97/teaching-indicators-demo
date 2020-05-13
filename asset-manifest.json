@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/teaching-indicators-demo/static/css/main.b758e6cf.chunk.css",
+    "main.css": "/teaching-indicators-demo/static/css/main.629b6edb.chunk.css",
     "main.js": "/teaching-indicators-demo/static/js/main.4604347b.chunk.js",
     "main.js.map": "/teaching-indicators-demo/static/js/main.4604347b.chunk.js.map",
     "runtime-main.js": "/teaching-indicators-demo/static/js/runtime-main.879cea6d.js",
@@ -8,16 +8,16 @@
     "static/js/2.6669b0f1.chunk.js": "/teaching-indicators-demo/static/js/2.6669b0f1.chunk.js",
     "static/js/2.6669b0f1.chunk.js.map": "/teaching-indicators-demo/static/js/2.6669b0f1.chunk.js.map",
     "index.html": "/teaching-indicators-demo/index.html",
-    "precache-manifest.6c664336ee99290208a6b2a43481ddae.js": "/teaching-indicators-demo/precache-manifest.6c664336ee99290208a6b2a43481ddae.js",
+    "precache-manifest.ab10eb2b8a5133ad51cdd673a0f8e695.js": "/teaching-indicators-demo/precache-manifest.ab10eb2b8a5133ad51cdd673a0f8e695.js",
     "service-worker.js": "/teaching-indicators-demo/service-worker.js",
-    "static/css/main.b758e6cf.chunk.css.map": "/teaching-indicators-demo/static/css/main.b758e6cf.chunk.css.map",
+    "static/css/main.629b6edb.chunk.css.map": "/teaching-indicators-demo/static/css/main.629b6edb.chunk.css.map",
     "static/js/2.6669b0f1.chunk.js.LICENSE.txt": "/teaching-indicators-demo/static/js/2.6669b0f1.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/teaching-indicators-demo/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.879cea6d.js",
     "static/js/2.6669b0f1.chunk.js",
-    "static/css/main.b758e6cf.chunk.css",
+    "static/css/main.629b6edb.chunk.css",
     "static/js/main.4604347b.chunk.js"
   ]
 }
