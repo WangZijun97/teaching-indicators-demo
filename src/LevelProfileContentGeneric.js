@@ -46,12 +46,14 @@ export class LevelProfileContentGeneric extends React.Component {
 		
 		this.state = {
 			controlsA: this.props.data.ControlsA.slice(),
-			controlsB: this.props.data.ControlsB.slice()
+			controlsB: this.props.data.ControlsB.slice(),
+			controlsC: this.props.data.ControlsC.slice()
 		}
 		
 		this.handleCBhoverentry = this.handleCBhoverentry.bind(this)
 		this.handleCBhoverexit = this.handleCBhoverexit.bind(this)
 		this.handleCBclick = this.handleCBclick.bind(this)
+		this.handleCBbutton = this.handleCBbutton.bind(this)
 	}
 	
 	/*
@@ -77,6 +79,10 @@ export class LevelProfileContentGeneric extends React.Component {
 		this.state.controlsA[t] = toggle
 		this.setState({controlsA: this.state.controlsA})
 	}
+	
+	handleCBbutton() {
+		this.setState({controlsC: [true]})
+	}
 		
 	
 	render() {
@@ -98,6 +104,9 @@ export class LevelProfileContentGeneric extends React.Component {
 							defaultconfig = {this.props.data.Ctrl.defaultconfig}
 							configvals = {this.props.data.Ctrl.configvals}
 							className = "controlbox"
+							helpertext = {true}
+							handlebutton = {this.handleCBbutton}
+							
 						/>
 						<FullTextGeneric
 							title = {this.props.data.Evd.title}
@@ -120,6 +129,7 @@ export class LevelProfileContentGeneric extends React.Component {
 							configvals = {this.props.data.Pro.configvals}
 							defaultconfig = {this.props.data.Pro.defaultconfig}
 							className = "profile"
+							visibility = {this.state.controlsC[0]}
 						/>
 					</div>
 				</div>

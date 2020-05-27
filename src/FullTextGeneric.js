@@ -28,6 +28,10 @@ export class FullTextGeneric extends React.Component {
 	
 	render() {
 		
+		if (!this.props.visibility) {
+			return null
+		}
+		
 		this.config = this.props.defaultconfig.slice()
 		
 		let i
@@ -53,6 +57,10 @@ export class FullTextGeneric extends React.Component {
 			</div>
 		)
 	}
+}
+
+FullTextGeneric.defaultProps = {
+	visibility: true
 }
 
 export default FullTextGeneric

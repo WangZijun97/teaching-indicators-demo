@@ -164,30 +164,33 @@ export let lv4profile_integrated = {
 	Evd: {
 		title: "Evidence",
 		switcher: {
-			0: [0,8,9,10,15,16,20,21,22],
-			1: [2,11,12,17,23],
-			2: [4,13,18,24],
-			3: [6,14,19,25],
-			4: [1],
-			5: [1],
-			6: [1],
-			7: [1],
-			8: [1],
-			9: [3],
-			10: [3],
-			11: [3],
-			12: [3],
-			13: [3],
-			14: [5],
-			15: [5],
-			16: [5],
-			17: [5],
-			18: [7],
-			19: [7],
-			20: [7],
-			21: [7]
+			0: [0,1,9,10,11,16,17,21,22,23],
+			1: [0,3,12,13,18,24],
+			2: [0,5,14,19,25],
+			3: [0,7,15,20,26],
+			4: [2],
+			5: [2],
+			6: [2],
+			7: [2],
+			8: [2],
+			9: [4],
+			10: [4],
+			11: [4],
+			12: [4],
+			13: [4],
+			14: [6],
+			15: [6],
+			16: [6],
+			17: [6],
+			18: [8],
+			19: [8],
+			20: [8],
+			21: [8]
 		},
 		text: [[
+			[
+				"Click on one of the dimensions (LF, ED, RP or SP) above to view the different types of evidences used to support accomplishments in that dimension"
+			],
 			[
 				"Learning Facilitation (LF)",
 				"Educational Design (ED)",
@@ -233,8 +236,9 @@ export let lv4profile_integrated = {
 		
 		transformer: configfn => {return x => {return (
 			<div>
-				{x[0].map(y => (<span style = {{"display": configfn()[0], "background-color": configfn()}}><i>{y}</i></span>))/*subtitle*/}
-				{x[1].map(z => {return (
+				<span className = "helptext" style = {{"display":configfn()[2]}}><i>{x[0]}</i></span>
+				{x[1].map(y => (<span style = {{"display": configfn()[0], "background-color": configfn()}}><i>{y}</i></span>))/*subtitle*/}
+				{x[2].map(z => {return (
 					<div>
 						<h4>{z[0]/*section title*/}</h4>
 						<ul>
@@ -245,10 +249,11 @@ export let lv4profile_integrated = {
 			</div>
 		)}},
 		
-		defaultconfig: tools.combine(tools.defaultconfiggen(4, tools.DEFAULTCOLOR), tools.defaultconfiggen(22, ["none", "none"]), [1,3,5,7]),
-		configvals: tools.combine(tools.defaultconfiggen(4, ["inline", "list-item"]), tools.colorlistgen(), [0,1,2,3])
+		defaultconfig: tools.combine(tools.defaultconfiggen(4, tools.DEFAULTCOLOR), tools.defaultconfiggen(23, ["none", "none", "inline"]), [2,4,6,8]),
 		
-	}, //remember to change Evd once implemented!!!
+		configvals: tools.combine(tools.defaultconfiggen(4, ["inline", "list-item", "none"]), tools.colorlistgen(), [0,1,2,3])
+		
+	}, 
 	Ctrl: {
 		title: "Generic Profile Summary, Associate Professor (Research and Teaching)",
 		switcher: {
@@ -347,6 +352,7 @@ export let lv4profile_integrated = {
 	},
 	ControlsA: tools.falselistgen(4), //to toggle which dimension
 	ControlsB: tools.falselistgen(17), //to toggle highlighting
+	ControlsC: [false], //to toggle specific profile visibility
 	Colors: tools.colorlistgen(),
 	Title: "Profile, Associate Professor (RT Appointment)"
 	

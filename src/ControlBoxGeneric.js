@@ -35,10 +35,21 @@ export class ControlBoxGeneric extends React.Component {
 		this.fgenfx = [-1,-1,-1]
 		let transformCtrl = this.props.transformgenerator(this.handlehover, this.handlehoverover, this.handleclick)
 		
+		let secondheader = this.props.title
+		if (this.props.helpertext) {
+			secondheader = ""
+		}
+		
 		return (
 			<div className = "controlbox">
-				<FullTextGeneric
+				<CBHelperText 
+					ifrender = {this.props.helpertext}
 					title = {this.props.title}
+					handlebutton = {this.props.handlebutton}
+					className = "cbhelpertext"
+				/>
+				<FullTextGeneric
+					title = {secondheader}
 					text = {this.props.text}
 					transform = {transformCtrl}
 					configs = {this.props.configs}
@@ -51,9 +62,39 @@ export class ControlBoxGeneric extends React.Component {
 		)
 	}
 }
+
+class CBHelperText extends React.Component {
+	
+	render() {
+		if (!this.props.ifrender) {
+			return 
+		}
 		
+		return (
+			<div>
+				<h3>{this.props.title}</h3>
+				<div className = "intro">
+					<FullTextGeneric
+						title = {-1}
+						text = {["Welcome! This generic profile describes the typical roles and contributions of someone appointed as an associate professor in a research-teaching position. Click on the text below for more details regarding the generic profile. You can also use the \"Specific Profile\" button and hover over the detailed subpointers to see how the generic profile maps into an example specific profile."]}
+						transform = {x => {return y => {return (<span><i>{y}</i></span>)}}}
+						configs = {[]}
+						switcher = {{}}
+						className = {this.props.className + " helptext"}
+						configvals = {[]}
+						defaultconfig = {[]}
+					/>
+					<div className = "introbutton">
+						<button onClick = {this.props.handlebutton}>Specific Profile</button>
+					</div>
+				</div>
+			</div>
+		)
+	}
+}
+			
 
-
+//depreciated
 export class ControlBoxGenericOLD extends React.Component {
 	
 	constructor(props) {
@@ -93,6 +134,7 @@ export class ControlBoxGenericOLD extends React.Component {
 					configvals = {this.props.colors}
 					defaultconfig = {tools.defaultconfiggen(this.props.text.flat().length, tools.DEFAULTCOLOR)}
 				/>
+				
 			</div>
 		)
 	}
