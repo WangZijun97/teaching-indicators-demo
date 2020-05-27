@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d6a0ca5b0f27c4565b095aa6f56c02f8",
+    "revision": "9d33857fc51ca87fc470a97a001fc5d8",
     "url": "/teaching-indicators-demo/index.html"
   },
   {
-    "revision": "98fe01e62dac3fd6fe35",
-    "url": "/teaching-indicators-demo/static/css/main.8ec821d0.chunk.css"
+    "revision": "153db0cc9ec94178c819",
+    "url": "/teaching-indicators-demo/static/css/main.614df773.chunk.css"
   },
   {
     "revision": "13fc22968fbd72e4d4cc",
@@ -16,15 +16,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/teaching-indicators-demo/static/js/2.6669b0f1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "98fe01e62dac3fd6fe35",
-    "url": "/teaching-indicators-demo/static/js/main.ec7ead2e.chunk.js"
+    "revision": "153db0cc9ec94178c819",
+    "url": "/teaching-indicators-demo/static/js/main.53e269c8.chunk.js"
   },
   {
     "revision": "eea2ce01638e9dfcebab",
     "url": "/teaching-indicators-demo/static/js/runtime-main.879cea6d.js"
-  },
-  {
-    "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",
-    "url": "/teaching-indicators-demo/static/media/logo.5d5d9eef.svg"
   }
 ]);
