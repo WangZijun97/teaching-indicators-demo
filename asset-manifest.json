@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/teaching-indicators-demo/static/css/main.614df773.chunk.css",
-    "main.js": "/teaching-indicators-demo/static/js/main.53e269c8.chunk.js",
-    "main.js.map": "/teaching-indicators-demo/static/js/main.53e269c8.chunk.js.map",
+    "main.js": "/teaching-indicators-demo/static/js/main.2106726f.chunk.js",
+    "main.js.map": "/teaching-indicators-demo/static/js/main.2106726f.chunk.js.map",
     "runtime-main.js": "/teaching-indicators-demo/static/js/runtime-main.879cea6d.js",
     "runtime-main.js.map": "/teaching-indicators-demo/static/js/runtime-main.879cea6d.js.map",
     "static/js/2.6669b0f1.chunk.js": "/teaching-indicators-demo/static/js/2.6669b0f1.chunk.js",
     "static/js/2.6669b0f1.chunk.js.map": "/teaching-indicators-demo/static/js/2.6669b0f1.chunk.js.map",
     "index.html": "/teaching-indicators-demo/index.html",
-    "precache-manifest.773eb8fbae6d6b51be346878018c810f.js": "/teaching-indicators-demo/precache-manifest.773eb8fbae6d6b51be346878018c810f.js",
+    "precache-manifest.adbda05b872ba7238d41cd63e2bb6172.js": "/teaching-indicators-demo/precache-manifest.adbda05b872ba7238d41cd63e2bb6172.js",
     "service-worker.js": "/teaching-indicators-demo/service-worker.js",
     "static/css/main.614df773.chunk.css.map": "/teaching-indicators-demo/static/css/main.614df773.chunk.css.map",
     "static/js/2.6669b0f1.chunk.js.LICENSE.txt": "/teaching-indicators-demo/static/js/2.6669b0f1.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.879cea6d.js",
     "static/js/2.6669b0f1.chunk.js",
     "static/css/main.614df773.chunk.css",
-    "static/js/main.53e269c8.chunk.js"
+    "static/js/main.2106726f.chunk.js"
   ]
 }
