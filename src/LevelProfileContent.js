@@ -5,9 +5,10 @@ import ControlBox from './ControlBox.js'
 
 /*
 Contains all three components of this file: the specific profile, generic profile, and evidences
+Depreciated, not in use
 */
 
-export class Everything extends React.Component {
+export class LevelProfileContent extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -124,4 +125,4 @@ export class Everything extends React.Component {
 	}
 }
 
-export default Everything
+export default LevelProfileContent

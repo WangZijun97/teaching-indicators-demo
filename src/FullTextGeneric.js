@@ -1,0 +1,58 @@
+import React from 'react'
+import './App.css'
+
+/* The following props are required for this Component to function:
+ * defaultconfig: list of default configured styling properties
+ * configs: data from ControlBox, i.e. state data from LevelProfileContentGeneric
+ * configvals: values for configurations to be switched to. Length must be equal to configs
+ * title: title of text
+ * text: text data
+ * transform: transform function generator for text data
+ * switcher: this.props.configs -> this.config mapping
+ * className: self-explanatory
+ */
+export class FullTextGeneric extends React.Component {
+	constructor(props) {
+		super(props)
+		this.genindex = -1
+		this.configgen = this.configgen.bind(this)
+		
+		this.config = []
+	}
+	
+	configgen() {
+		this.genindex ++
+		const c = this.genindex
+		return this.config[c]
+	}
+	
+	render() {
+		
+		this.config = this.props.defaultconfig.slice()
+		
+		let i
+		for (i = 0; i < this.props.configs.length; i++) {
+			if (this.props.configs[i]) {
+				this.props.switcher[i].forEach(x => this.config[x] = this.props.configvals[i])
+			}
+		}
+		this.genindex = -1
+		
+		let textlist = this.props.text.map(this.props.transform(this.configgen))
+		
+		let titletext = (<h3>{this.props.title}</h3>)
+		if (this.props.title === -1) {
+			titletext = (<div></div>)
+		}
+		
+		return (
+			<div className = {this.props.className}>
+				{titletext}
+				{textlist}
+			</div>
+		)
+	}
+}
+
+export default FullTextGeneric
+					

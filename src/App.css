@@ -2,45 +2,21 @@
   text-align: left;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: stretch;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .everything {
 	display: grid;
 	grid-template-columns: repeat(2,1fr);
-	padding: 2%;
+	padding: 0.5% 4% ;
 	font-size: 14px;
 }
 
@@ -48,9 +24,10 @@
 .left {
 	border-color: white;
 	border-width: 2px;
-	padding: 2%;
-	display: grid;
-	grid-template-rows: 1fr 2fr;
+	padding: 0%;
+	display: flex;
+	flex-direction: column;
+	/*grid-template-rows: 1fr 2fr;*/
 }
 
 .right {
@@ -78,6 +55,24 @@
 	padding: 0.5em 0px;
 }
 
+.profiletitle {
+	text-align: center;
+}
+
+.credits {
+	font-size: 14px;
+	text-align: center;
+}
+
 h3 {
 	text-align: center;
+	font-size: 1.25em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+a:visited {
+	color: pink;
 }
