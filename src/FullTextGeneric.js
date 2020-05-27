@@ -2,9 +2,9 @@ import React from 'react'
 import './App.css'
 
 /* The following props are required for this Component to function:
- * defaultconfig: list of default configured styling properties
+ * defaultconfig: list of default configured styling properties. The index of the elements is based on the text (i.e. this.config, not this.props.configs!)
  * configs: data from ControlBox, i.e. state data from LevelProfileContentGeneric
- * configvals: values for configurations to be switched to. Length must be equal to configs
+ * configvals: values for configurations to be switched to. Length must be equal to configs. The index of the elements is based on configs, not the text (i.e on this.props.configs, not this.config)!
  * title: title of text
  * text: text data
  * transform: transform function generator for text data
@@ -49,6 +49,7 @@ export class FullTextGeneric extends React.Component {
 			<div className = {this.props.className}>
 				{titletext}
 				{textlist}
+				{/*<p>{this.config.toString().replace(/,/g, ", ")}</p> //For debugging*/}
 			</div>
 		)
 	}

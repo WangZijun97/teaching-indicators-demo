@@ -2,13 +2,14 @@ import React from 'react'
 import './App.css'
 
 export const DEFAULTCOLOR = "#282c34"
+export const HIGHLIGHTCOLORS = ["saddlebrown", "green", "blue", "rebeccapurple"]
 
 export function falselistgen(n) {
 	return defaultconfiggen(n, false)
 }
 
 export function colorlistgen() {
-	let l = ["saddlebrown", "green", "blue", "rebeccapurple"]
+	let l = HIGHLIGHTCOLORS
 	let n = [5,5,4,4]
 	let ls = []
 	let i, j

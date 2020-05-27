@@ -103,7 +103,7 @@ export class LevelProfileContentGeneric extends React.Component {
 							title = {this.props.data.Evd.title}
 							text = {this.props.data.Evd.text}
 							transform = {this.props.data.Evd.transformer}
-							configs = {this.state.controlsA}
+							configs = {tools.combine(this.state.controlsA, this.state.controlsB, [0,1,2,3])}
 							switcher = {this.props.data.Evd.switcher}
 							configvals = {this.props.data.Evd.configvals}
 							defaultconfig = {this.props.data.Evd.defaultconfig}

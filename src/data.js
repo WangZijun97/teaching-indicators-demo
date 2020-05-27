@@ -164,10 +164,28 @@ export let lv4profile_integrated = {
 	Evd: {
 		title: "Evidence",
 		switcher: {
-			0: [0,4,5,6,11,12,16,17,18],
-			1: [1,7,8,13,19],
-			2: [2,9,14,20],
-			3: [3,10,15,21]
+			0: [0,8,9,10,15,16,20,21,22],
+			1: [2,11,12,17,23],
+			2: [4,13,18,24],
+			3: [6,14,19,25],
+			4: [1],
+			5: [1],
+			6: [1],
+			7: [1],
+			8: [1],
+			9: [3],
+			10: [3],
+			11: [3],
+			12: [3],
+			13: [3],
+			14: [5],
+			15: [5],
+			16: [5],
+			17: [5],
+			18: [7],
+			19: [7],
+			20: [7],
+			21: [7]
 		},
 		text: [[
 			[
@@ -215,7 +233,7 @@ export let lv4profile_integrated = {
 		
 		transformer: configfn => {return x => {return (
 			<div>
-				{x[0].map(y => (<span style = {{"display": configfn()[0]}}><i>{y}</i></span>))/*subtitle*/}
+				{x[0].map(y => (<span style = {{"display": configfn()[0], "background-color": configfn()}}><i>{y}</i></span>))/*subtitle*/}
 				{x[1].map(z => {return (
 					<div>
 						<h4>{z[0]/*section title*/}</h4>
@@ -227,8 +245,8 @@ export let lv4profile_integrated = {
 			</div>
 		)}},
 		
-		defaultconfig: tools.defaultconfiggen(22, ["none", "none"]),
-		configvals: tools.defaultconfiggen(22, ["block", "list-item"])
+		defaultconfig: tools.combine(tools.defaultconfiggen(4, tools.DEFAULTCOLOR), tools.defaultconfiggen(22, ["none", "none"]), [1,3,5,7]),
+		configvals: tools.combine(tools.defaultconfiggen(4, ["inline", "list-item"]), tools.colorlistgen(), [0,1,2,3])
 		
 	}, //remember to change Evd once implemented!!!
 	Ctrl: {
