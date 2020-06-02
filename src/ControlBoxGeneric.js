@@ -76,7 +76,7 @@ class CBHelperText extends React.Component {
 				<div className = "intro">
 					<FullTextGeneric
 						title = {-1}
-						text = {["Welcome! This generic profile describes the typical roles and contributions of someone appointed as an associate professor in a research-teaching position. Click on the text below for more details regarding the generic profile. You can also use the \"Specific Profile\" button and hover over the detailed subpointers to see how the generic profile maps into an example specific profile."]}
+						text = {["This profile describes the teaching roles and educational contributionos of an Associate Professor, someone with an appointment that has teaching as well as research expectations. For concrete examples, click on the \"Specific Profile\" button (click again to hide) and hover over the detailed subpointers below."]}
 						transform = {x => {return y => {return (<span><i>{y}</i></span>)}}}
 						configs = {[]}
 						switcher = {{}}

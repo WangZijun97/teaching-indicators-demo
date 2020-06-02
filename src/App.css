@@ -144,3 +144,38 @@ button:after {
 	justify-content: center;
 	align-items: center;
 }
+
+/*
+.lilf:before{
+	content: '\2713';
+	float: left;
+	display: block;
+	width: 1.2em;
+}
+*/
+
+.lilf:before {
+	content: '>';
+	padding-right: 0.65em;
+	margin-left: -1.35em;
+}
+
+.lilf {
+	list-style-type: none;
+}
+
+.lied {
+	list-style-type: disc;
+}
+
+.lirp {
+	list-style-type: circle;
+}
+
+.lisp {
+	list-style-type: square;
+}
+
+.cbdimension {
+	margin-bottom: 1em;
+}

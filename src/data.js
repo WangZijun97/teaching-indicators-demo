@@ -108,26 +108,26 @@ export let lv4profile = {
 //The following data uses the edited Lv IV AP RT Profile with K, EL and Evd Integrated
 export let lv4profile_integrated = {
 	Pro: {
-		title: "Specific Profile, Associate Professor (RT Appointment)",
+		title: "Specific Profile with Examples, Level 4 (Research and Teaching position)",
 		switcher: {
 			0: [3, 14],
 			1: [1],
 			2: [5, 8],
-			3: [2],
-			4: [17],
-			5: [6],
-			6: [18],
-			7: [7],
-			8: [1],
-			9: [17],
-			10: [10,12],
-			11: [13],
-			12: [1],
-			13: [10],
-			14: [15],
-			15: [17],
-			16: [1],
-			17: [18]
+			103: [2],
+			3: [17],
+			4: [6],
+			5: [18],
+			6: [7],
+			107: [1],
+			7: [17],
+			8: [10,12],
+			9: [13],
+			110: [1],
+			10: [10],
+			11: [15],
+			12: [17],
+			113: [1],
+			13: [18]
 		},
 		text: [
 			[
@@ -164,32 +164,33 @@ export let lv4profile_integrated = {
 	Evd: {
 		title: "Evidence",
 		switcher: {
-			0: [0,1,9,10,11,16,17,21,22,23],
-			1: [0,3,12,13,18,24],
-			2: [0,5,14,19,25],
-			3: [0,7,15,20,26],
-			4: [2],
-			5: [2],
-			6: [2],
-			7: [2],
-			8: [2],
-			9: [4],
-			10: [4],
-			11: [4],
-			12: [4],
-			13: [4],
-			14: [6],
-			15: [6],
-			16: [6],
-			17: [6],
-			18: [8],
-			19: [8],
-			20: [8],
-			21: [8]
+			0: [0,1,2,13,14,15,16,17,18,27,28,29,30,37,38,39,40,41,42],
+			1: [0,4,5,19,20,21,22,31,32,43,44],
+			2: [0,7,8,23,24,33,34,45,46],
+			3: [0,10,11,25,26,35,36,47,48],
+			4: [3],
+			5: [3],
+			6: [3],
+			7: [3],
+			8: [6],
+			9: [6],
+			10: [6],
+			11: [6],
+			12: [9],
+			13: [9],
+			14: [9],
+			15: [12],
+			16: [12],
+			17: [12]
 		},
 		text: [[
 			[
-				"Click on one of the dimensions (LF, ED, RP or SP) above to view the different types of evidences used to support accomplishments in that dimension"
+				(
+					<div>
+						<p>Click on one of the dimensions (LF, ED, RP or SP) above to view the different types of evidences used to support accomplishments in that dimension. The below evidences are still sorted by the above dimensions using different bullet point shapes, refer to the legend for help (Information will appear once at least one dimension has been selected).</p>
+						<p style = {{"text-indent": "1em"}}><u><b>Legend</b></u></p>
+					</div>
+				)
 			],
 			[
 				"Learning Facilitation (LF)",
@@ -237,25 +238,33 @@ export let lv4profile_integrated = {
 		transformer: configfn => {return x => {return (
 			<div>
 				<span className = "helptext" style = {{"display":configfn()[2]}}><i>{x[0]}</i></span>
-				{x[1].map(y => (<span style = {{"display": configfn()[0], "background-color": configfn()}}><i>{y}</i></span>))/*subtitle*/}
+				<ul>
+					{x[1].map(y => (<li className = {configfn()[3]} style = {{"display": configfn()[1]}}><span style = {{"background-color": configfn()}}><i>{y}</i></span></li>))/*subtitle bulletpoints*/}
+				</ul>
 				{x[2].map(z => {return (
 					<div>
 						<h4>{z[0]/*section title*/}</h4>
 						<ul>
-							{z[1].map(w => (<li style = {{"display": configfn()[1]}}>{w}</li>)) /*bullet points*/}
+							{z[1].map(w => (<li className = {configfn()[3]} style = {{"display": configfn()[1]}}>{w}</li>)) /*bullet points*/}
 						</ul>
 					</div>
 				)})}
 			</div>
 		)}},
 		
-		defaultconfig: tools.combine(tools.defaultconfiggen(4, tools.DEFAULTCOLOR), tools.defaultconfiggen(23, ["none", "none", "inline"]), [2,4,6,8]),
+		defaultconfig: tools.combine(tools.defaultconfiggen(4, tools.DEFAULTCOLOR), tools.defaultconfiggen(45, ["none", "none", "inline", "null"]), [3,6,9,12]),
 		
-		configvals: tools.combine(tools.defaultconfiggen(4, ["inline", "list-item", "none"]), tools.colorlistgen(), [0,1,2,3])
+		configvals: tools.combine(
+			[
+				["inline", "list-item", "inline", "lilf"],
+				["inline", "list-item", "inline", "lied"],
+				["inline", "list-item", "inline", "lirp"],
+				["inline", "list-item", "inline", "lisp"]
+			], tools.colorlistgen(), [0,1,2,3])
 		
 	}, 
 	Ctrl: {
-		title: "Generic Profile Summary, Associate Professor (Research and Teaching)",
+		title: "Generic Profile, Level 4 (Research and Teaching position)",
 		switcher: {
 			0: [0],
 			1: [1],
@@ -274,57 +283,49 @@ export let lv4profile_integrated = {
 			14: [14],
 			15: [15],
 			16: [16],
-			17: [17],
-			18: [18],
-			19: [19],
-			20: [20],
-			21: [21]
+			17: [17]
 		}, //this is a combination of switcher for display and bgcolor
 		text: [
 			[
-				(<span>Demonstrates positive impact on studens' education, attained through high levels of achievement in both the process <b>(LF)</b> and the design on teaching important content that provides students with a strong knowledge base <b>(ED)</b>.</span>),
+				(<span>A committed teacher with deep knowledge of the subject taught, individual students and how they learn, and what needs to be done to support their learning, with sustained performance over at least 5-7 years. Demonstrates positive impact on studens' education, attained through high levels of achievement in both the process <b>(LF)</b> and the design <b>(ED)</b> of teaching that benefits students' learning.</span>),
 				[
 					[
-						(<span>Level IV LF</span>),
+						(<span>Level 4, Learning Facilitation (LF): </span>),
 						[
-							(<span><b>Applies knowledge</b> of developments in discipline/profession to support <b>deployment</b> of tools for subjects they teach</span>),
+							(<span><b>Applies knowledge</b> of developments in discipline/profession to support <b>deployment</b> of activities and provision of feedback to students</span>),
 							(<span>Recognition and <b>esteem</b> for <b>accomplishments</b> in <b>deployment</b> of learning activities</span>),
 							(<span>Positive <b>impact</b> and <b>influence</b> on <b>learning</b> outcomes and experiences of students within the <b>school</b></span>),
-							(<span>Sustained performance for at least <b>5-7 years</b></span>),
-							(<span><b>Engaging others</b> to apply knowledge of developments in discipline/profession to <b>critically review</b> school's programs and services.</span>)
+							(<span><b>Engaging others</b> to apply knowledge of developments in discipline/profession and of learning facilitation activities to <b>critically review</b> teaching within a school's programs and services.</span>)
 						]
 					],
 					[
-						(<span>Level IV ED</span>),
+						(<span>Level 4, Educational Design (ED): </span>),
 						[
 							(<span><b>Applies knowledge</b> of developments in discipline/profession to support <b>review and development</b> of subjects they teach</span>),
 							(<span>Recognition and <b>esteem</b> for <b>accomplishments</b> in <b>design and development</b> of learning activities</span>),
 							(<span>Positive <b>impact</b> on <b>quality</b> of learning activities within the <b>school</b></span>),
-							(<span>Sustained performance for at least <b>5-7 years</b></span>),
-							(<span><b>Engaging others</b> to apply knowledge of developments in discipline/profession to <b>critically review</b> school's programs and services.</span>)
+							(<span><b>Engaging others</b> to apply knowledge of developments in discipline/profession and of educational design to <b>critically review</b> the university programs and services.</span>)
 						]
 					]
 				]
 			],
 			[
-				(<span>Engages in sustained reflection <b>(RP)</b> that is underpinned by scholarly engagement with relevant research-informed work in order to improve their teaching and their students' learning <b>(SP)</b>.</span>),
+				(<span>Engages in sustained reflection <b>(RP)</b> that is underpinned by scholarly engagement <b>(SP)</b> with relevant research-informed work in order to improve their teaching and their students' learning.</span>),
 				[
 					[
-						(<span>Level IV RP</span>),
+						(<span>Level 4, Reflective Practice (RP): </span>),
 						[
-							(<span><b>Reflection</b> on how to <b>align</b> acquired <b>knowledge</b> of best teaching practice approaches within discipline adn teaching context with own teaching practices</span>),
+							(<span><b>Reflection</b> on how to <b>align</b> acquired <b>knowledge</b> of good teaching approaches within discipline and teaching context with own teaching practices</span>),
 							(<span>Recognition and <b>esteem</b> for being an <b>accomplished reflective</b> teacher</span>),
-							(<span>Sustained performance for at least <b>5-7 years</b></span>),
 							(<span><b>Improving</b> subjects and programs taught according <b>to peer/student feedback received and advances</b> within their discipline/profession.</span>),
 						]
 					],
 					[
-						(<span>Level IV SP</span>),
+						(<span>Level 4, Scholarly Practice (SP): </span>),
 						[
-							(<span>Develop <b>familiarity</b> and <b>knowledge</b> of best teaching practice approaches within discipline and teaching context</span>),
+							(<span>Development of <b>familiarity</b> and <b>knowledge</b> of good teaching approaches within discipline and teaching context</span>),
 							(<span>Recognition and <b>esteem</b> for <b>accomplishments</b> in <b>scholarly work</b> in education</span>),
-							(<span>Sustained performance for at least <b>5-7 years</b></span>),
-							(<span><b>Engaing others</b> to apply knowledge of developments in discipline/profession to <b>critically review</b> school's programs and services.</span>)
+							(<span><b>Engaing others</b> to apply knowledge of developments in discipline/profession and of educational design to <b>critically review</b> the university programs and services.</span>)
 						]
 					]
 				]
@@ -336,7 +337,7 @@ export let lv4profile_integrated = {
 				<li className = "controlli">{y[0]}
 					<ul>
 						{y[1].map(b => {return (
-							<li>
+							<li className = "cbdimension">
 								<span onClick = {fclick()}>{b[0]} <i><u>(click to expand/compress)</u></i></span>
 								<ul style = {{"display": configfn()}}>
 									{b[1].map(c => <li><span onMouseEnter = {fenter()} onMouseLeave = {fexit()} style = {{"background-color": configfn()}}>{c}</span></li>)/*sublevel 2*/}
@@ -351,10 +352,10 @@ export let lv4profile_integrated = {
 		configvals: tools.cbconfigvalsgen()
 	},
 	ControlsA: tools.falselistgen(4), //to toggle which dimension
-	ControlsB: tools.falselistgen(17), //to toggle highlighting
+	ControlsB: tools.falselistgen(13), //to toggle highlighting
 	ControlsC: [false], //to toggle specific profile visibility
 	Colors: tools.colorlistgen(),
-	Title: "Profile, Associate Professor (RT Appointment)"
+	Title: "Profile, Level 4 (Research and Teaching position)"
 	
 				
 					

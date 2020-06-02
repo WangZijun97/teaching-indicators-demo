@@ -10,7 +10,7 @@ export function falselistgen(n) {
 
 export function colorlistgen() {
 	let l = HIGHLIGHTCOLORS
-	let n = [5,5,4,4]
+	let n = [4,4,3,3]
 	let ls = []
 	let i, j
 	for (i = 0; i < n.length; i++) {
@@ -28,7 +28,7 @@ export function defaultconfiggen(n, val) {
 }
 
 export function cbcombine(ls1, ls2) {
-	return combine(ls1, ls2, [0,6,12,17])
+	return combine(ls1, ls2, [0,5,10,14])
 }
 
 export function combine(ls1, ls2, pos) {
@@ -44,7 +44,7 @@ export function combine(ls1, ls2, pos) {
 
 
 export function cbdefconfiggen() {
-	return cbcombine(defaultconfiggen(4,"none"), defaultconfiggen(17, DEFAULTCOLOR))
+	return cbcombine(defaultconfiggen(4,"none"), defaultconfiggen(13, DEFAULTCOLOR))
 }
 
 export function test() {

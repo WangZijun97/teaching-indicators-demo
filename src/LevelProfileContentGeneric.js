@@ -74,14 +74,12 @@ export class LevelProfileContentGeneric extends React.Component {
 	}
 	
 	handleCBclick(t) {
-		let toggle = !this.state.controlsA[t]
-		this.state.controlsA.fill(false)
-		this.state.controlsA[t] = toggle
+		this.state.controlsA[t] = !this.state.controlsA[t]
 		this.setState({controlsA: this.state.controlsA})
 	}
 	
 	handleCBbutton() {
-		this.setState({controlsC: [true]})
+		this.setState({controlsC: [!this.state.controlsC[0]]})
 	}
 		
 	
@@ -132,6 +130,7 @@ export class LevelProfileContentGeneric extends React.Component {
 							visibility = {this.state.controlsC[0]}
 						/>
 					</div>
+					
 				</div>
 			</div>
 		)
